@@ -34,6 +34,8 @@ build/Release
 node_modules
 jspm_packages
 
+dist
+
 # Optional npm cache directory
 .npm
 
@@ -49,7 +51,7 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-.dist
+
 
 
 # End of https://www.gitignore.io/api/node
