@@ -3,7 +3,6 @@ var sass = require("gulp-sass");
 var minifyHtml = require('gulp-minify-html');
 var minifyScss = require('gulp-minify-css');
 
-
 gulp.task('compila-scss', function() {
 	return gulp.src('source/scss/**/*.scss')
 	.pipe(sass())
@@ -27,9 +26,9 @@ gulp.task('minify-html', function() {
 		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watcho', function() {
 	gulp.watch('./source/scss/*.scss',['compila-scss']);
 	gulp.watch('./source/index.html',['compila-html']);
 });
 
-gulp.task('default',['compila-scss','minify-scss','compila-html','minify-html','watch']);
+gulp.task('default',['compila-scss','minify-scss','compila-html','minify-html','watcho']);
