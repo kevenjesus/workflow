@@ -1,11 +1,11 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
-// var minifyHtml = require('gulp-minify-html');
+var minifyHtml = require('gulp-minify-html');
 // var minifyScss = require('gulp-minify-css');
 
 gulp.task('compila-scss', function() {
 	return gulp.src('source/scss/**/*.scss')
-	.pipe(sass())
+	.pipe(sass({outputStyle: 'compressed'}))
 	.pipe(gulp.dest('./dist/css'))
 });
 
@@ -16,8 +16,9 @@ gulp.task('compila-scss', function() {
 // })
 
 gulp.task('compila-html', function() {
-	return gulp.src('source/index.html')		
-	.pipe(gulp.dest('./dist'));
+	return gulp.src('source/index.html')	
+				.pipe(minifyHtml())	
+				.pipe(gulp.dest('./dist'));
 });
 
 // gulp.task('minify-html', function() {
